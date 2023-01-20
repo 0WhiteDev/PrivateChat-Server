@@ -30,7 +30,7 @@ ngrok tcp 8888
 ```
 ServerSocket serverSocket = new ServerSocket(8888);
 ```
-- Change **"8888"** to your own port and run application
+- Change **"8888"** to your own port and run application.
 _Now you can run ngrok server on your own port!_
 
 ## Authors
