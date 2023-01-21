@@ -26,12 +26,11 @@ ngrok tcp 8888
 ```
 
 #### How to change port
-- Go to src and find
+- Run server using this
 ```
-ServerSocket serverSocket = new ServerSocket(8888);
+java -jar PrivateChatServer.jar <port>
 ```
-- Change **"8888"** to your own port and run application.
-_Now you can run ngrok server on your own port!_
+- Set **<port>** to value on which you want to run the server (if you leave <port> empty then the server will start on port **8888**)
 
 ## Authors
 
