@@ -10,15 +10,21 @@ import java.util.Iterator;
 
 public class Main {
     static ArrayList<PrintWriter> clientOutputStreams;
+    static int PORT;
 
     public static void main(String[] args) {
+        if(args.length > 0){
+            PORT = Integer.parseInt(args[0]);
+        }else{
+            PORT = 8888;
+        }
         new Main().runServer();
     }
 
     public void runServer() {
         clientOutputStreams = new ArrayList<>();
         try {
-            ServerSocket serverSocket = new ServerSocket(8888);
+            ServerSocket serverSocket = new ServerSocket(PORT);
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 PrintWriter writer = new PrintWriter(clientSocket.getOutputStream());
@@ -70,6 +76,7 @@ class ClientHandler implements Runnable {
                 Main.sendMessageToUsers(message);
             }
         } catch (Exception ex) {
+            Main.sendMessageToUsers("[Server] User disconnected!");
             System.out.println("[Server] User disconnected!");
         }
     }
