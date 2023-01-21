@@ -30,7 +30,7 @@ ngrok tcp 8888
 ```
 java -jar PrivateChatServer.jar <port>
 ```
-- Set **<port>** to value on which you want to run the server (if you leave <port> empty then the server will start on port **8888**)
+- Set it to value on which you want to run the server (if you leave it empty then the server will start on port **8888**)
 
 ## Authors
 
